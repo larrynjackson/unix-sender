@@ -40,12 +40,12 @@ func main() {
 	values = append(values, inMsg)
 
 	var idCount int64 = 1
-	for idx := 0; idx < 1000; idx++ {
+	for idx := 0; idx < 500; idx++ {
 
 		for _, d := range values {
 			d.Id = idCount
 			idCount++
-			time.Sleep(time.Millisecond * 2)
+			time.Sleep(time.Millisecond * 5)
 			v, _ := json.Marshal(d)
 
 			conn, err := net.Dial(protocol, sockAddr)
